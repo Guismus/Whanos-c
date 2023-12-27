@@ -1,0 +1,6 @@
+FROM gcc:13.2
+WORKDIR /app
+COPY . .
+RUN make
+RUN rm -rf app Makefile
+CMD ./compiled-app

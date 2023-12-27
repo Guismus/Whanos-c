@@ -1,0 +1,7 @@
+FROM maven:latest
+WORKDIR /app
+COPY ./app/ ./app/
+RUN mvn package -f app/pom.xml
+RUN cp app/target/app.jar .
+RUN rm -rf app
+CMD java -jar app.jar
